@@ -38,18 +38,18 @@
             <type label="Bit" length="0" sql="bit" quote="" />
         </group>
     </datatypes>
-    <table x="559" y="232" name="Usuários">
+    <table x="559" y="232" name="Usuarios">
         <row name="id" null="1" autoincrement="1">
             <datatype>INTEGER</datatype>
             <default>NULL</default>
         </row>
         <row name="nome" null="1" autoincrement="0">
             <datatype>VARCHAR(200)</datatype>
-            <default>NULL</default>
+            <default>'NOT NULL'</default>
         </row>
         <row name="email" null="1" autoincrement="0">
             <datatype>VARCHAR(200)</datatype>
-            <default>NULL</default>
+            <default>'NOT NULL'</default>
         </row>
         <row name="data_de_nascimento" null="1" autoincrement="0">
             <datatype>DATE</datatype>
@@ -59,7 +59,7 @@
             <datatype>CHAR(11)</datatype>
             <default>NULL</default>
         </row>
-        <row name="área_de_interesse" null="1" autoincrement="0">
+        <row name="area_de_interesse" null="1" autoincrement="0">
             <datatype>VARCHAR(100)</datatype>
             <default>NULL</default>
         </row>
@@ -73,13 +73,13 @@
         </row>
         <row name="senha" null="1" autoincrement="0">
             <datatype>VARCHAR(30)</datatype>
-            <default>NULL</default>
+            <default>'NOT NULL'</default>
         </row>
         <row name="cidade" null="1" autoincrement="0">
             <datatype>VARCHAR(100)</datatype>
             <default>NULL</default>
         </row>
-        <row name="gênero" null="1" autoincrement="0">
+        <row name="genero" null="1" autoincrement="0">
             <datatype>VARCHAR(10)</datatype>
             <default>NULL</default>
         </row>
@@ -96,15 +96,15 @@
             <datatype>INTEGER</datatype>
             <default>NULL</default>
         </row>
-        <row name="descrição" null="1" autoincrement="0">
-            <datatype>MEDIUMTEXT</datatype>
-            <default>NULL</default>
-        </row>
         <row name="titulo" null="1" autoincrement="0">
             <datatype>VARCHAR(150)</datatype>
-            <default>NULL</default>
+            <default>'NOT NULL'</default>
         </row>
-        <row name="area_de_atuação" null="1" autoincrement="0">
+        <row name="descricao" null="1" autoincrement="0">
+            <datatype>MEDIUMTEXT</datatype>
+            <default>'NOT NULL'</default>
+        </row>
+        <row name="area_de_atuacao" null="1" autoincrement="0">
             <datatype>VARCHAR(50)</datatype>
             <default>NULL</default>
         </row>
@@ -118,7 +118,7 @@
         </row>
         <row name="carga_horaria" null="1" autoincrement="0">
             <datatype>VARCHAR(20)</datatype>
-            <default>NULL</default>
+            <default>'NOT NULL'</default>
         </row>
         <row name="qtd_vagas" null="1" autoincrement="0">
             <datatype>INTEGER</datatype>
@@ -127,35 +127,35 @@
         <row name="id_usuario_autor" null="1" autoincrement="0">
             <datatype>INTEGER</datatype>
             <default>NOT NULL</default>
-            <relation table="Usuários" row="id" />
+            <relation table="Usuarios" row="id" />
         </row>
-        <row name="id_organização_autora" null="1" autoincrement="0">
+        <row name="id_organizacao_autora" null="1" autoincrement="0">
             <datatype>INTEGER</datatype>
             <default>NULL</default>
-            <relation table="organizações" row="id" />
+            <relation table="organizacoes" row="id" />
         </row>
         <key type="PRIMARY" name="">
             <part>id</part>
         </key>
     </table>
-    <table x="109" y="331" name="organizações">
+    <table x="109" y="331" name="organizacoes">
         <row name="id" null="1" autoincrement="1">
             <datatype>INTEGER</datatype>
             <default>NULL</default>
         </row>
         <row name="nome" null="1" autoincrement="0">
             <datatype>VARCHAR(150)</datatype>
-            <default>NULL</default>
+            <default>'NOT NULL'</default>
         </row>
         <row name="cnpj" null="1" autoincrement="0">
             <datatype>CHAR(13)</datatype>
-            <default>NULL</default>
+            <default>'NOT NULL'</default>
         </row>
-        <row name="area_de_ação" null="1" autoincrement="0">
+        <row name="area_de_acao" null="1" autoincrement="0">
             <datatype>VARCHAR(100)</datatype>
             <default>NULL</default>
         </row>
-        <row name="emai" null="1" autoincrement="0">
+        <row name="email" null="1" autoincrement="0">
             <datatype>VARCHAR(150)</datatype>
             <default>NULL</default>
         </row>
@@ -171,63 +171,58 @@
             <datatype>VARCHAR(200)</datatype>
             <default>NULL</default>
         </row>
-        <row name="descrição" null="1" autoincrement="0">
+        <row name="descricao" null="1" autoincrement="0">
             <datatype>MEDIUMTEXT</datatype>
             <default>NULL</default>
         </row>
-        <row name="id_usuarios_pertencentes" null="1" autoincrement="0">
+        <row name="id_usuarios" null="1" autoincrement="0">
             <datatype>INTEGER</datatype>
-            <default>NULL</default>
-            <relation table="Usuários" row="id" />
-        </row>
-        <row name="id_usuario_criador" null="1" autoincrement="0">
-            <datatype>INTEGER</datatype>
-            <default>NULL</default>
-            <relation table="Usuários" row="id" />
+            <default>NOT NULL</default>
+            <relation table="Usuarios" row="id" />
         </row>
         <key type="PRIMARY" name="">
             <part>id</part>
         </key>
     </table>
-    <table x="272" y="98" name="publicações">
+    <table x="272" y="98" name="publicacoes">
         <row name="id" null="1" autoincrement="1">
             <datatype>INTEGER</datatype>
             <default>NULL</default>
         </row>
         <row name="titulo" null="1" autoincrement="0">
             <datatype>VARCHAR(100)</datatype>
-            <default>NULL</default>
+            <default>'NOT NULL'</default>
         </row>
-        <row name="descrição" null="1" autoincrement="0">
+        <row name="descricao" null="1" autoincrement="0">
             <datatype>MEDIUMTEXT</datatype>
-            <default>NULL</default>
+            <default>'NOT NULL'</default>
         </row>
         <row name="anexos" null="1" autoincrement="0">
             <datatype>MEDIUMTEXT</datatype>
             <default>NULL</default>
         </row>
-        <row name="id_usuário_autor" null="1" autoincrement="0">
+        <row name="id_usuario_autor" null="1" autoincrement="0">
             <datatype>INTEGER</datatype>
             <default>NOT NULL</default>
-            <relation table="Usuários" row="id" />
+            <relation table="Usuarios" row="id" />
         </row>
         <row name="id_organização_autora" null="1" autoincrement="0">
             <datatype>INTEGER</datatype>
             <default>NULL</default>
-            <relation table="organizações" row="id" />
+            <relation table="organizacoes" row="id" />
         </row>
         <key type="PRIMARY" name="">
             <part>id</part>
         </key>
     </table>
-    <table x="844" y="272" name="inscrições">
+    <table x="844" y="272" name="inscricoes">
         <row name="id" null="1" autoincrement="1">
             <datatype>INTEGER</datatype>
             <default>NULL</default>
         </row>
         <row name="nome" null="1" autoincrement="0">
             <datatype>VARCHAR(100)</datatype>
-            <default>NULL</default>
+            <default>'NOT NULL'</default>
         </row>
         <row name="objetivo" null="1" autoincrement="0">
             <datatype>MEDIUMTEXT</datatype>
@@ -235,39 +230,39 @@
         </row>
         <row name="id_usuario" null="1" autoincrement="0">
             <datatype>INTEGER</datatype>
-            <default>NULL</default>
-            <relation table="Usuários" row="id" />
+            <default>NOT NULL</default>
+            <relation table="Usuarios" row="id" />
         </row>
         <row name="id_oportunidade" null="1" autoincrement="0">
             <datatype>INTEGER</datatype>
-            <default>NULL</default>
+            <default>NOT NULL</default>
             <relation table="oportunidades" row="id" />
         </row>
         <key type="PRIMARY" name="">
             <part>id</part>
         </key>
     </table>
-    <table x="858" y="98" name="contraproposta">
+    <table x="859" y="99" name="contrapropostas">
         <row name="id" null="1" autoincrement="1">
             <datatype>INTEGER</datatype>
             <default>NULL</default>
         </row>
         <row name="nome" null="1" autoincrement="0">
             <datatype>VARCHAR(150)</datatype>
-            <default>NULL</default>
+            <default>'NOT NULL'</default>
         </row>
         <row name="proposta" null="1" autoincrement="0">
             <datatype>MEDIUMTEXT</datatype>
-            <default>NULL</default>
+            <default>'NOT NULL'</default>
         </row>
         <row name="id_usuario" null="1" autoincrement="0">
             <datatype>INTEGER</datatype>
-            <default>NULL</default>
-            <relation table="Usuários" row="id" />
+            <default>NOT NULL</default>
+            <relation table="Usuarios" row="id" />
         </row>
         <row name="id_oportunidade" null="1" autoincrement="0">
             <datatype>INTEGER</datatype>
-            <default>NULL</default>
+            <default>NOT NULL</default>
             <relation table="oportunidades" row="id" />
         </row>
         <key type="PRIMARY" name="">
